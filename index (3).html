@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchanted Elegance Ministry Co. | Boutique Wedding Officiant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4A3B32;
+            --secondary: #D4AF37;
+            --bg-light: #FAF8F5;
+            --text-dark: #2C2C2C;
+            --accent: #E8DFD8;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary);
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(74, 59, 50, 0.6), rgba(74, 59, 50, 0.6)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 15px;
+            font-weight: 300;
+        }
+
+        .hero .officiant-subtitle {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b8962e;
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--secondary);
+            transform: scale(1.03);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        .price-card h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+        }
+
+        .features-list li::before {
+            content: "✓ ";
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .addons-section {
+            background-color: var(--accent);
+            padding: 60px 20px;
+            border-radius: 8px;
+            margin-top: 60px;
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .addon-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .addon-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-info-block {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .contact-info-block a {
+            color: var(--primary);
+            text-decoration: underline;
+            margin: 0 8px;
+        }
+
+        /* Form & Questionnaire Styling */
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-section-header {
+            font-size: 1.6rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .form-section-header:first-of-type {
+            margin-top: 0;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Enchanted Elegance Ministry Co.</a>
+            <nav>
+                <a href="#services">Services & Pricing</a>
+                <a href="#addons">Add-Ons</a>
+                <a href="#questionnaire">Couple's Questionnaire</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Crafting Your Unique Love Story</h1>
+        <p>Boutique Wedding Officiant Services based in Flint, Michigan</p>
+        <div class="officiant-subtitle">Beck Plumley, Officiant</div>
+        <a href="#questionnaire" class="btn">Start Your Questionnaire</a>
+    </section>
+
+    <section class="section" id="services">
+        <h2 class="section-title">Ceremony Packages</h2>
+        <p class="section-subtitle">Tailored officiant services designed around your personal journey</p>
+
+        <div class="pricing-grid">
+            <!-- Package 1 -->
+            <div class="price-card">
+                <div>
+                    <h3>Short & Sweet</h3>
+                    <div class="price">$150 – $200</div>
+                    <ul class="features-list">
+                        <li>Intimate Elopements or Micro-Weddings</li>
+                        <li>Standard Ceremony Script</li>
+                        <li>License Signing & Official Filing</li>
+                        <li>Phone / Email Consultation</li>
+                    </ul>
+                </div>
+                <a href="#questionnaire" class="btn">Book Short & Sweet</a>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="price-card featured">
+                <span class="badge">Most Popular</span>
+                <div>
+                    <h3>Traditional Elegance</h3>
+                    <div class="price">$300 – $400</div>
+                    <ul class="features-list">
+                        <li>Standard Custom Ceremony</li>
+                        <li>Personalized Vows Assistance</li>
+                        <li>Full Ceremony Coordination</li>
+                        <li>In-Person or Virtual Planning Session</li>
+                        <li>License Signing & Official Filing</li>
+                    </ul>
+                </div>
+                <a href="#questionnaire" class="btn">Book Traditional Elegance</a>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="price-card">
+                <div>
+                    <h3>Elegance Package</h3>
+                    <div class="price">$550 – $750+</div>
+                    <ul class="features-list">
+                        <li>Premium Custom Love Story Script</li>
+                        <li>In-Depth Discovery Questionnaire</li>
+                        <li>Choice of Included Unity Ritual</li>
+                        <li>Full Rehearsal & Ceremony Direction</li>
+                        <li>Priority Planning Support</li>
+                        <li>License Signing & Official Filing</li>
+                    </ul>
+                </div>
+                <a href="#questionnaire" class="btn">Book Premium Elegance</a>
+            </div>
+        </div>
+
+        <!-- Add-Ons Section -->
+        <div class="addons-section" id="addons">
+            <h2 class="section-title">Custom Enhancements & Add-Ons</h2>
+            <p class="section-subtitle">Personalize your ceremony experience with tailored add-on options</p>
+            
+            <div class="addons-grid">
+                <div class="addon-item">
+                    <h4>Rehearsal Coordination</h4>
+                    <p>On-site direction to ensure your wedding party is perfectly prepared for the aisle walk and ceremony cues.</p>
+                </div>
+                <div class="addon-item">
+                    <h4>Unity Ritual Specializations</h4>
+                    <p>Incorporate symbolic traditions such as Handfasting, Sand Ceremonies, Unity Candles, or Custom Wine/Tasting Rituals.</p>
+                </div>
+                <div class="addon-item">
+                    <h4>Travel Beyond Flint Area</h4>
+                    <p>Available to travel across Michigan and surrounding areas. Custom travel fee calculated based on venue location.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Couple's Questionnaire & Discovery Form -->
+    <section class="section" id="questionnaire">
+        <h2 class="section-title">Couple's Discovery Questionnaire</h2>
+        <p class="section-subtitle">Share your story and vision so we can craft the perfect ceremony experience for you</p>
+
+        <div class="contact-info-block">
+            <p><strong>Beck Plumley</strong> | Officiant</p>
+            <p>
+                Phone: <a href="tel:8108303639">(810) 830-3639</a> | 
+                Email: <a href="mailto:beckplumley@gmail.com">beckplumley@gmail.com</a>
+            </p>
+        </div>
+
+        <!-- Formspree Integration: Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree ID -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+            
+            <!-- Part 1: Couple & Event Details -->
+            <h3 class="form-section-header">1. Couple & Event Details</h3>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="partner1">Partner A Full Name</label>
+                    <input type="text" id="partner1" name="partner_1_name" placeholder="First & Last Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="partner2">Partner B Full Name</label>
+                    <input type="text" id="partner2" name="partner_2_name" placeholder="First & Last Name" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Primary Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(810) 555-0123" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="wedding-date">Wedding Date</label>
+                    <input type="date" id="wedding-date" name="wedding_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="ceremony-time">Estimated Ceremony Time</label>
+                    <input type="text" id="ceremony-time" name="ceremony_time" placeholder="e.g., 4:00 PM">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="venue">Venue Name & Location</label>
+                    <input type="text" id="venue" name="venue_location" placeholder="e.g., The Historic Ballroom, Flint MI">
+                </div>
+                <div class="form-group">
+                    <label for="guest-count">Estimated Guest Count</label>
+                    <input type="text" id="guest-count" name="guest_count" placeholder="e.g., 75 guests">
+                </div>
+            </div>
+
+            <!-- Part 2: Ceremony Preferences -->
+            <h3 class="form-section-header">2. Ceremony Preferences</h3>
+
+            <div class="form-group">
+                <label for="package">Desired Package</label>
+                <select id="package" name="selected_package">
+                    <option value="short_and_sweet">Short & Sweet ($150 – $200)</option>
+                    <option value="traditional_elegance" selected>Traditional Elegance ($300 – $400)</option>
+                    <option value="elegance_package">Elegance Package ($550 – $750+)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ceremony-tone">Preferred Ceremony Tone / Vibe</label>
+                <select id="ceremony-tone" name="ceremony_tone">
+                    <option value="romantic_lighthearted">Romantic & Lighthearted</option>
+                    <option value="traditional_formal">Traditional & Formal</option>
+                    <option value="relaxed_intimate">Relaxed & Intimate</option>
+                    <option value="fun_unique">Fun, Upbeat & Unique</option>
+                    <option value="custom_mix">Custom Blend / Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vows-preference">Vows Preference</label>
+                <select id="vows-preference" name="vows_preference">
+                    <option value="personal_written">We want to write personal vows to each other</option>
+                    <option value="traditional_repeat">We prefer traditional repeat-after-me vows</option>
+                    <option value="officiant_assistance">We need assistance writing personal vows</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="unity-rituals">Unity Rituals / Add-Ons Requested</label>
+                <textarea id="unity-rituals" name="unity_rituals_requested" rows="2" placeholder="e.g., Handfasting, Sand Ceremony, Rehearsal Direction, etc."></textarea>
+            </div>
+
+            <!-- Part 3: Your Story & Vision -->
+            <h3 class="form-section-header">3. Your Story & Vision</h3>
+
+            <div class="form-group">
+                <label for="how-we-met">How did you two meet?</label>
+                <textarea id="how-we-met" name="how_we_met" rows="3" placeholder="Share a brief overview of how your paths crossed..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="proposal-story">The Proposal Story</label>
+                <textarea id="proposal-story" name="proposal_story" rows="3" placeholder="How did the proposal happen? Any fun or special details?"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="favorite-qualities">What do you love most about each other?</label>
+                <textarea id="favorite-qualities" name="favorite_qualities" rows="3" placeholder="Key qualities, humor, support, shared passions..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="special-requests">Special Requests, Traditions, or Notes</label>
+                <textarea id="special-requests" name="special_requests" rows="3" placeholder="Incorporate specific family traditions, remembrances, non-religious preferences, or other notes..."></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Submit Couple's Questionnaire</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Enchanted Elegance Ministry Co. | Beck Plumley | <a href="tel:8108303639">(810) 830-3639</a> | <a href="mailto:beckplumley@gmail.com">beckplumley@gmail.com</a> | Flint, Michigan | All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
